@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="DEV/imagens/logo.png">
+    <title>ComFe</title>
+</head>
+
+<body>
+    <!--HEADER-->
+    <nav class="Nav">
+        <ul class="Nav-list">
+            <li>
+                <a href="#Home">Home</a>
+            </li>
+            <li>
+                <a href="#Sobre">Sobre</a>
+            </li>
+            <li>
+                <a href="#Produtos">Produtos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--MAIN-->
+    <section class="Main" id="Home">
+        <div>
+            <h1>Olá,<br>seja bem vindo</h1>
+            <p1>Peça já seus pratos e xicaras personalizados</p1>
+            <a href="https://wa.me/556299564474" target="_blank">
+                <button>
+                    Fale conosco
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!--SOBRE-->
+    <section class="About" id="Sobre">
+        <div>
+            <h2>Sobre</h2>
+            <p>Cada peça que criamos é uma tela em branco que ganha vida através do traço artesanal. Trabalhamos com pratos, xícaras e pires de porcelana premium, transformando utensílios em obras de arte funcionais e exclusivas. Nosso processo combina técnica, criatividade e atenção aos detalhes para criar peças que contam histórias, celebram momentos e refletem a personalidade de quem as escolhe.</p>
+            <p>Por acreditarmos que a beleza não tem preço fixo, trabalhamos com orçamentos flexíveis. O valor final é tão único quanto a sua ideia, ajustando-se harmoniosamente à complexidade do desenho, à quantidade e ao acabamento desejado.</p>
+        </div>
+        <img src="DEV/imagens/comfe5.jpg" alt="Porcelana personalizada">
+    </section>
+
+    <!--PRODUTOS-->
+    <section class="Projects" id="Produtos">
+
+        <h2>Produtos</h2>
+        <p>Descubra nossa coleção de porcelanas exclusivas. Cada peça é cuidadosamente pintada à mão, unindo a delicadeza da arte com a sofisticação de detalhes únicos. Navegue pelo nosso portfólio e inspire-se em peças que transformam o cotidiano em memórias especiais.</p>
+
+        <div class="Carousel">
+
+            <button class="Carousel-button prev" id="prev">
+                &#10094;
+            </button>
+
+            <div class="Carousel-window">
+
+                <a href="https://www.instagram.com/comfe_porcelanaspersonalizadas/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <div class="Carousel-track">
+
+                        <img src="DEV/imagens/comfe1.jpg" alt="Porcelana personalizada">
+                        <img src="DEV/imagens/comfe2.jpg" alt="Porcelana personalizada">
+                        <img src="DEV/imagens/comfe3.jpg" alt="Porcelana personalizada">
+                        <img src="DEV/imagens/comfe6.jpg" alt="Porcelana personalizada">
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <button class="Carousel-button next" id="next">
+                &#10095;
+            </button>
+
+        </div>
+
+        <div class="Carousel-dots">
+
+            <button class="dot active"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+
+        </div>
+
+        <section class="faq" id="faq">
+            <h2>Perguntas frequentes</h2>
+
+            <div class="Faq-container">
+                <details>
+                    <summary>As peças podem ir para o micro-ondas?</summary>
+                    <p>Peças que possuam ouro ou partes pintadas com ouro não podem ir ao micro-ondas.</p>
+                </details>
+
+                <details>
+                    <summary>É seguro comer nas peças?</summary>
+                    <p>É completamente seguro mesmo com a tinta ou ouro. Graças ao aquecimento em alta temperatura, a tinta é derretida e se funde ao esmalte original da porcelana.</p>
+                </details>
+
+                <details>
+                    <summary>As peças podem ser lavadas?</summary>
+                    <p>Sim, as peças personalizadas podem ser lavadas como qualquer outro tipo de louça. No entanto, é recomendado que não se use a parte áspera da bucha, pois a fricção com força pode desgastar o acabamento.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- RODAPÉ (FOOTER) -->
+        <footer class="Footer">
+            <div class="Footer-content">
+                <h3>ComFé Porcelanas</h3>
+                <p>Transformando utensílios em obras de arte personalizadas.</p>
+                <div class="Footer-links">
+                    <a href="https://www.instagram.com/comfe_porcelanaspersonalizadas/" target="_blank">Instagram</a>
+                    <a href="https://wa.me/556299564474" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+            <div class="Footer-bottom">
+                <p>&copy; 2026 ComFé Porcelanas Personalizadas. Todos os direitos reservados. Desenvolvido por Josueh Antonio</p>
+            </div>
+        </footer>
+
+    </section>
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="backToTop" title="Voltar ao topo">↑</button>
+
+    <!-- SCRIPT MOVIDO PARA O FINAL DO BODY -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 88,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const elementosParaAnimar = document.querySelectorAll('.About, .Projects-list img, .Projects h2');
+
+        elementosParaAnimar.forEach(el => el.classList.add('hidden'));
+
+        const checkScroll = () => {
+            const windowHeight = window.innerHeight;
+            const scrollTop = window.scrollY;
+
+            elementosParaAnimar.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top + scrollTop;
+
+                if (scrollTop + windowHeight > elementTop + 100) {
+                    el.classList.add('show');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        const navLinks = document.querySelectorAll('.Nav-list a');
+        const navSections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            navSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        const track = document.querySelector(".Carousel-track");
+        const slides = document.querySelectorAll(".Carousel-track img");
+        const nextButton = document.getElementById("next");
+        const prevButton = document.getElementById("prev");
+        const dots = document.querySelectorAll(".dot");
+        const carouselWindow = document.querySelector(".Carousel-window");
+
+        let currentSlide = 0;
+        let intervaloCarrossel;
+
+        function updateCarousel() {
+            const windowWidth = carouselWindow.clientWidth;
+            const itemWidth = 550;
+            const gap = 30;
+            const step = itemWidth + gap;
+
+            const offset = (windowWidth - itemWidth) / 2 - (currentSlide * step);
+
+            track.style.transform = `translateX(${offset}px)`;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentSlide);
+            });
+
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add("active-img");
+                } else {
+                    slide.classList.remove("active-img");
+                }
+            });
+        }
+
+        function iniciarCarrossel() {
+            intervaloCarrossel = setInterval(() => {
+                currentSlide++;
+                if (currentSlide >= slides.length) {
+                    currentSlide = 0;
+                }
+                updateCarousel();
+            }, 4000);
+        }
+
+        function resetarCarrossel() {
+            clearInterval(intervaloCarrossel);
+            iniciarCarrossel();
+        }
+
+        nextButton.addEventListener("click", () => {
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            updateCarousel();
+            resetarCarrossel();
+        });
+
+        prevButton.addEventListener("click", () => {
+            currentSlide--;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+            updateCarousel();
+            resetarCarrossel();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentSlide = index;
+                updateCarousel();
+                resetarCarrossel();
+            });
+        });
+
+        window.addEventListener('resize', updateCarousel);
+
+        updateCarousel();
+        iniciarCarrossel();
+    </script>
+
+</body>
+</html>
